@@ -24,6 +24,8 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
           placeholder="Search center"
           placeholderTextColor="#0c4650"
         />
+        <Text style={styles.searchIcon}>🔍</Text>
+        <Text style={styles.moreOption}>☰</Text>
       </View>
     </View>
   );
@@ -58,19 +60,34 @@ const styles = StyleSheet.create({
   },
   searchButton: {
     backgroundColor: '#f5f5f5',
-    paddingVertical: 12,
+    paddingVertical: 8,
     paddingHorizontal: 16,
+    paddingLeft: 50,
     marginTop: 16,
     borderRadius: 50,
     flexDirection: 'row',
     gap: 8,
+    position: 'relative',
   },
   searchBar: {
     flex: 1,
     fontSize: 20,
   },
-  searchText: {
+  searchIcon: {
     color: '#666',
+    position: 'absolute',
+    left: 18,
+    top: 18,
+    fontSize: 22,
+  },
+  moreOption: {
+    color: '#a9d101',
+    position: 'absolute',
+    right: 20,
+    top: 18,
+    fontSize: 22,
+    fontWeight: 'black',
+    transform: [{rotate: '90deg'}],
   },
 });
 

@@ -35,6 +35,12 @@ const AppNavigator: React.FC = () => {
               key={tab}
               style={styles.tabItem}
               onPress={() => setActiveTab(tab)}>
+              <Text style={styles.icon}>
+                {tab === 'Bookings' && '🏠'}
+                {tab === 'Activities' && '📆'}
+                {tab === 'Notifications' && '🔔'}
+                {tab === 'Menu' && '☰'}
+              </Text>
               <Text
                 style={[
                   styles.tabText,
@@ -90,6 +96,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
+  },
+  icon: {
+    fontSize: 18,
+    marginBottom: 5,
   },
 });
 

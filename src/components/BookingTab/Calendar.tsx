@@ -21,6 +21,7 @@ interface DayInfo {
 
 const Calendar: React.FC = () => {
   const [selectedDay, setSelectedDay] = useState<number>(2); // Tuesday selected by default
+  const [selectedTime, setSelectedTime] = useState<string>('14:00');
 
   // Generate a week of days starting from the current date
   const today = new Date();
@@ -91,8 +92,20 @@ const Calendar: React.FC = () => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.timeSlotsContainer}>
         {timeSlots.map((time, index) => (
-          <TouchableOpacity key={index} style={styles.timeSlotItem}>
-            <Text style={styles.timeSlotText}>{time}</Text>
+          <TouchableOpacity
+            key={index}
+            onPress={() => setSelectedTime(time)}
+            style={[
+              styles.timeSlotItem,
+              selectedTime === time && styles.selectedTimeContainer,
+            ]}>
+            <Text
+              style={[
+                styles.timeSlotText,
+                selectedTime === time && styles.selectedTime,
+              ]}>
+              {time}
+            </Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
@@ -180,6 +193,13 @@ const styles = StyleSheet.create({
   },
   timeSlotText: {
     fontSize: 16,
+  },
+  selectedTimeContainer: {
+    borderColor: '#b2db00',
+  },
+  selectedTime: {
+    color: '#b2db00',
+    fontWeight: 'bold',
   },
 });
 
