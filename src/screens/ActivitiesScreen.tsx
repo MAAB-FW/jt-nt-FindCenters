@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {
   ActivityIndicator,
   FlatList,
@@ -8,30 +8,13 @@ import {
   View,
 } from 'react-native';
 import TodoItem from '../components/ActivitiesTab/TodoItem';
-import {fetchTodos, Todo} from '../services/api';
+
+import {useTodos} from '../hooks/useTodos';
 
 const ActivitiesScreen: React.FC = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const {data: todos = [], isLoading, error} = useTodos();
 
-  useEffect(() => {
-    loadTodos();
-  }, []);
-
-  const loadTodos = async (): Promise<void> => {
-    try {
-      setLoading(true);
-      const data = await fetchTodos();
-      setTodos(data);
-      setLoading(false);
-    } catch (err) {
-      setError('Failed to load activities');
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
+  if (isLoading) {
     return (
       <View style={styles.centerContainer}>
         <ActivityIndicator size="large" color="#000" />
@@ -43,7 +26,7 @@ const ActivitiesScreen: React.FC = () => {
   if (error) {
     return (
       <View style={styles.centerContainer}>
-        <Text style={styles.errorText}>{error}</Text>
+        <Text style={styles.errorText}>{error.message}</Text>
       </View>
     );
   }
