@@ -40,9 +40,7 @@ const ActivitiesScreen: React.FC = () => {
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <View style={styles.headContainer}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Activities</Text>
-        </View>
+        <Text style={styles.title}>Activities</Text>
       </View>
 
       <View style={styles.statsContainer}>
@@ -74,16 +72,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
-    // Add padding to account for status bar on Android
     paddingTop: StatusBar.currentHeight || 0,
   },
   headContainer: {
-    paddingHorizontal: 16,
-    paddingVertical: 16,
+    padding: 16,
     backgroundColor: '#fff',
-  },
-  titleContainer: {
-    marginBottom: 12,
   },
   title: {
     fontSize: 22,

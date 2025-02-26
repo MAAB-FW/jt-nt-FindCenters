@@ -3,7 +3,7 @@ import {StyleSheet, Text, TextInput, View} from 'react-native';
 
 interface HeaderProps {
   title: string;
-  subtitle?: string;
+  subtitle: string;
 }
 
 const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
@@ -19,7 +19,11 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
         </View>
       </View>
       <View style={styles.searchButton}>
-        <TextInput placeholder="Search center" placeholderTextColor="#666" />
+        <TextInput
+          style={styles.searchBar}
+          placeholder="Search center"
+          placeholderTextColor="#0c4650"
+        />
       </View>
     </View>
   );
@@ -56,9 +60,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
     paddingVertical: 12,
     paddingHorizontal: 16,
-    borderRadius: 8,
+    marginTop: 16,
+    borderRadius: 50,
     flexDirection: 'row',
     gap: 8,
+  },
+  searchBar: {
+    flex: 1,
+    fontSize: 20,
   },
   searchText: {
     color: '#666',

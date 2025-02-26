@@ -141,8 +141,7 @@ const styles = StyleSheet.create({
   },
   venueContainer: {
     paddingHorizontal: 16,
-    paddingBottom: 16,
-    borderBottomWidth: 1,
+    // paddingBottom: 16,
     borderBottomColor: '#eee',
     position: 'relative',
   },
@@ -155,7 +154,7 @@ const styles = StyleSheet.create({
   },
   venue: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 6,
     left: 25,
   },
   venueName: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {Todo} from '../../services/api';
+import {Todo} from '../../hooks/useTodos';
 
 interface TodoItemProps {
   todo: Todo;
@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 1},
     shadowOpacity: 0.05,
     shadowRadius: 2,
-    elevation: 2,
+    boxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.05)',
+    // elevation: 2,
   },
   statusIndicator: {
     width: 4,
