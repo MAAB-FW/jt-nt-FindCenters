@@ -14,10 +14,10 @@ const Header: React.FC<HeaderProps> = ({title, subtitle}) => {
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.subtitle}>{subtitle}</Text>
         </View>
-        <View>
-          <Text style={styles.icon}>💬</Text>
-        </View>
+        <Text style={styles.icon}>💬</Text>
       </View>
+
+      {/* searchbar */}
       <View style={styles.searchButton}>
         <TextInput
           style={styles.searchBar}

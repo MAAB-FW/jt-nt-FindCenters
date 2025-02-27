@@ -20,7 +20,7 @@ interface DayInfo {
 }
 
 const Calendar: React.FC = () => {
-  const [selectedDay, setSelectedDay] = useState<number>(2); // Tuesday selected by default
+  const [selectedDay, setSelectedDay] = useState<number>(2);
   const [selectedTime, setSelectedTime] = useState<string>('14:00');
 
   // Generate a week of days starting from the current date

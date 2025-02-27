@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    // Add padding to account for status bar on Android
     paddingTop: StatusBar.currentHeight || 0,
   },
 });

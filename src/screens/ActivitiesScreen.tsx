@@ -43,6 +43,7 @@ const ActivitiesScreen: React.FC = () => {
         <Text style={styles.title}>Activities</Text>
       </View>
 
+      {/* Stats Info */}
       <View style={styles.statsContainer}>
         <View style={styles.statItem}>
           <Text style={styles.statValue}>{totalCount}</Text>
@@ -58,6 +59,7 @@ const ActivitiesScreen: React.FC = () => {
         </View>
       </View>
 
+      {/* todos data */}
       <FlatList
         data={todos}
         renderItem={({item}) => <TodoItem todo={item} />}

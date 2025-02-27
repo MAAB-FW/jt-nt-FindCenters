@@ -12,13 +12,11 @@ export const useTodos = () => {
     queryKey: ['todos'],
     queryFn: async (): Promise<Todo[]> => {
       try {
-        const response = await fetch(
-          'https://jsonplaceholder.typicode.com/todos',
-        );
-        if (!response.ok) {
+        const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+        if (!res.ok) {
           throw new Error('Network response was not ok');
         }
-        return await response.json();
+        return await res.json();
       } catch (error) {
         console.error('Error fetching todos:', error);
         throw error;
